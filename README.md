@@ -8,7 +8,7 @@ Ce site web fournit différents outils mathématiques:
 [3. La somme des chiffres dans un entier donné.](#La-somme-des-chiffres-dans-un-entier-donné)
 
 [4. Convertir un nombre décimal en binaire](#Convertir-un-nombre-décimal-en-binaire)
-
+---
 
 ### Table de multiplication d'un nombre donné.
 ### Le pgcd de deux entiers.
