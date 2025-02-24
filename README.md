@@ -227,7 +227,13 @@ La documentation pour ce script est bien définie dans le fichier `matrix.js`. P
 
 **1. Changer la taille et les matrices si vous voudriez utiliser vos propres matrices, puis uncomment l'une des appeles des fonctions proposées**
 
+![Preview](/assets/matrice_ex.png)
+![Preview](/assets/fcts.png)
+
 **2. Démarer le fichier avec la commande `node matrix.js`**
 
-### Résultat :
+### Résultat (Exemple : addition):
+
+![Preview](/assets/res_addition.png)
+
 
