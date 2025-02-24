@@ -9,6 +9,8 @@ Ce site web fournit différents outils mathématiques:
 
 [4. Convertir un nombre décimal en binaire](#Convertir-un-nombre-décimal-en-binaire)
 
+[5. Simple Calculatrice](#Simple-Calculatrice)
+
 ![Preview](/assets/mainWindow.png)
 ---
 
@@ -131,13 +133,10 @@ Une boucle `for` additionne chaque chiffre après l'avoir converti en entier ave
 
 ```javascript
  let sum = 0;
-    
     x = x.toString();
-    
     for (let index = 0; index < x.length; index++) {
         sum += parseInt(x[index]);
     }
-    
 ```
 
 **3.Affichage du résultat :**
@@ -158,7 +157,6 @@ Si le champ est vide, une alerte est affichée et la fonction s'arrête.
 
 ```javascript
  let dec = prompt("Le nombre decimal : ");
-
     if(dec == ''){
         alert("Enter un nombre !");
         return;
@@ -172,21 +170,13 @@ Une fonction récursive `decToBin(x)` est utilisée pour convertir le nombre en 
 L'algorithme utilise la division par 2 et stocke le résultat sous forme de nombre.
 
 ```javascript
-
     let bin = 0;
-
     let i = 0;
-    
     let decToBin = (x) =>{
-        
         bin = bin +  (x%2) * Math.pow(10, i++)
-        
-    
         if (x == 1 || x == 0){
             return bin;
         }
-    
-    
         return decToBin(Math.floor(x/2));
     }
 ```
@@ -194,3 +184,39 @@ L'algorithme utilise la division par 2 et stocke le résultat sous forme de nomb
 **3. Affichage du résultat :**
 
 Le résultat est affiché dans un élément HTML avec l'ID binary.
+
+### Simple Calculatrice
+
+**1. Récupération des valeurs et de l'opérateur :**
+
+Les valeurs des nombres sont extraites des champs `#nbr_1` et `#nbr_2`.
+
+L'opérateur sélectionné est récupéré à l'aide des boutons radio.
+
+**2. Vérification des entrées :**
+
+Vérifie si les champs sont bien remplis et si un opérateur est sélectionné.
+
+**3. Calcul et affichage du résultat :**
+
+Effectue l'opération correspondant à l'opérateur sélectionné.
+
+Affiche le résultat dans #results sous la forme `a + b = c`.
+
+```javascript
+switch (selectedRadio.value) {
+        case '+':
+            results.innerText = nbr_1 + selectedRadio.value + nbr_2 + " = " + (nbr_1 + nbr_2);
+            break;
+        case '-':
+            results.innerText = nbr_1 + selectedRadio.value + nbr_2 + " = " + (nbr_1 - nbr_2);
+            break;
+        case '*':
+            results.innerText = nbr_1 + selectedRadio.value + nbr_2 + " = " + (nbr_1 * nbr_2);
+            break;
+        case '/':
+            results.innerText = nbr_1 + selectedRadio.value + nbr_2 + " = " + (nbr_1 / nbr_2);
+            break;
+
+    }
+```
