@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Math tools</title>
+</head>
+
+<body class="m-10 bg-gray-100 text-gray-900 flex flex-col items-center justify-center min-h-screen">
+
+    <div id="btns" class="flex space-x-4 mb-6">
+        <button id="mult_btn"
+            class="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition">Table de
+            multiplication</button>
+        <button id="pgcd_btn"
+            class="px-4 py-2 bg-gray-600 text-white rounded-lg shadow hover:bg-gray-700 transition">PGCD</button>
+        <button id="somme_btn"
+            class="px-4 py-2 bg-gray-600 text-white rounded-lg shadow hover:bg-gray-700 transition">Somme</button>
+        <button id="decToBin_btn"
+            class="px-4 py-2 bg-gray-600 text-white rounded-lg shadow hover:bg-gray-700 transition">Decimal to
+            Binary</button>
+    </div>
+
+    <div id="container1" class="bg-white p-6 rounded-lg shadow-md w-full max-w-md text-center">
+        <h1 class="text-xl font-bold">La table de multiplication du nombre <span id="multiplicateur"
+                class="text-indigo-600"></span></h1>
+    </div>
+
+    <div id="container2" class="mt-6 bg-white p-6 rounded-lg shadow-md w-full max-w-md text-center">
+        <p id="pgcd_res" class="text-lg text-gray-700"></p>
+    </div>
+
+    <div id="container3" class="mt-6 bg-white p-6 rounded-lg shadow-md w-full max-w-md text-center">
+        <p id="somme" class="text-lg text-gray-700"></p>
+    </div>
+
+    <div id="container4" class="mt-6 bg-white p-6 rounded-lg shadow-md w-full max-w-md text-center">
+        <p id="binary" class="text-lg text-gray-700"></p>
+    </div>
+
+    <div id="container5" class="mt-6 bg-white p-6 rounded-lg shadow-md w-full max-w-md text-center">
+        <div class="mb-4">
+            <input type="text" name="nbr_1" id="nbr_1" class="p-2 border border-gray-300 rounded-md w-20 text-center"
+                placeholder="Nbr 1">
+            <input type="text" name="nbr_2" id="nbr_2"
+                class="p-2 border border-gray-300 rounded-md w-20 text-center ml-2" placeholder="Nbr 2">
+        </div>
+
+        <div class="flex justify-center gap-4 mb-4">
+            <input type="radio" name="operator" value="+" id="plus" class="form-radio">
+            <label for="+" class="text-lg text-gray-700">+</label>
+            <input type="radio" name="operator" value="-" id="minus" class="form-radio">
+            <label for="-" class="text-lg text-gray-700">-</label>
+            <input type="radio" name="operator" value="*" id="multiply" class="form-radio">
+            <label for="*" class="text-lg text-gray-700">*</label>
+            <input type="radio" name="operator" value="/" id="divide" class="form-radio">
+            <label for="/" class="text-lg text-gray-700">/</label>
+        </div>
+
+
+        <p id="results" class="mt-4 text-xl font-semibold text-gray-800"></p>
+
+        <button id="calculate_btn" class="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition">Calc</button>
+    </div>
+
+
+    <script src="multiplication.js"></script>
+    <script src="pgcd.js"></script>
+    <script src="sommeChiffre.js"></script>
+    <script src="decToBin.js"></script>
+    <script src="calculator.js"></script>
+    <script>
+        let mult_btn = document.querySelector("#mult_btn");
+        let pgcd_btn = document.querySelector("#pgcd_btn");
+        let somme_btn = document.querySelector("#somme_btn");
+        let decToBin_btn = document.querySelector("#decToBin_btn");
+        let calculate_btn = document.querySelector("#calculate_btn");
+
+        mult_btn.addEventListener('click', () => {
+            func1();
+        });
+
+        pgcd_btn.addEventListener('click', () => {
+            func2();
+        });
+
+        somme_btn.addEventListener('click', () => {
+            func3();
+        });
+
+        decToBin_btn.addEventListener('click', () => {
+            func5();
+        });
+
+        calculate_btn.addEventListener('click', () => {
+            func6();
+        });
+</script>
+</body>
+
+</html>
