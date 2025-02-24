@@ -1,5 +1,5 @@
 # Math-tools
-Ce site web fournit différents outils mathématiques1. Time table of a given number.
+Ce site web fournit différents outils mathématiques
 1. Table de multiplication d'un nombre donné.
 2. Le pgcd de deux entiers.
 3. La somme des chiffres dans un entier donné.
