@@ -10,7 +10,7 @@ Ce site web fournit différents outils mathématiques:
 [4. Convertir un nombre décimal en binaire](#Convertir-un-nombre-décimal-en-binaire)
 
 
-## Table de multiplication d'un nombre donné.
-## Le pgcd de deux entiers.
-## La somme des chiffres dans un entier donné.
-## Convertir un nombre décimal en binaire
+### Table de multiplication d'un nombre donné.
+### Le pgcd de deux entiers.
+### La somme des chiffres dans un entier donné.
+### Convertir un nombre décimal en binaire
