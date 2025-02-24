@@ -11,6 +11,8 @@ Ce site web fournit différents outils mathématiques:
 
 [5. Simple Calculatrice](#Simple-Calculatrice)
 
+[6. Opperations sur les matrices](#Opperations-sur-les-matrices)
+
 ![Preview](/assets/mainWindow.png)
 ---
 
@@ -220,3 +222,12 @@ switch (selectedRadio.value) {
 
     }
 ```
+### Opperations sur les matrices
+La documentation pour ce script est bien définie dans le fichier `matrix.js`. Pour l'utiliser, il suffit de : 
+
+**1. Changer la taille et les matrices si vous voudriez utiliser vos propres matrices, puis uncomment l'une des appeles des fonctions proposées**
+
+**2. Démarer le fichier avec la commande `node matrix.js`**
+
+### Résultat :
+
