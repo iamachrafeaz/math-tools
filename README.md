@@ -14,7 +14,7 @@ Ce site web fournit différents outils mathématiques:
 
 ### Table de multiplication d'un nombre donné.
 
-1. Au début, on demande à l'utilisateur de saisir un nombre en utilisant prompt(). Si la valeur saisie est vide, on affiche une alert() et quitte la fonction.
+**1. Au début, on demande à l'utilisateur de saisir un nombre en utilisant prompt(). Si la valeur saisie est vide, on affiche une alert() et quitte la fonction.**
 ```javascript
 let value = prompt("Donner la valeur ");
    if(value == ''){
@@ -22,7 +22,7 @@ let value = prompt("Donner la valeur ");
       return;
   }
 ```
-2. Mise à jour de l'interface :
+**2. Mise à jour de l'interface :**
 
 La valeur entrée est insérée dans un élément HTML avec l'ID multiplicateur pour l'afficher sur la page.
 
@@ -31,7 +31,7 @@ let multiplicateur = document.querySelector("#multiplicateur");
 multiplicateur.innerHTML = value;
 ```
 
-3. Génération et affichage de la table de multiplication :
+**3. Génération et affichage de la table de multiplication :**
 
 La fonction sélectionne un conteneur HTML avec l'ID container1.
 
@@ -44,8 +44,8 @@ Son contenu est défini sous la forme `index x valeur = résultat`.
 L'élément `<p>` est ajouté dans `#container1` pour afficher la ligne correspondante de la table de multiplication.
 
 ```javascript
-let container = document.querySelector("#container1");
-let content;
+let container = document.querySelector("#tableMultip");
+container.innerHTML='';let content;
     for (let index = 1; index <= 10; index++) {
         content = document.createElement("p");
         content.textContent = index + " x " + value + " = " + value * index;
@@ -54,5 +54,143 @@ let content;
 ```
 
 ### Le pgcd de deux entiers.
+
+**1. Demande de l'entrée utilisateur :**
+
+L'utilisateur entre deux nombres via `prompt()`.
+
+```javascript
+let x = prompt("donner le premier nombre ");
+let y = prompt("donner le deuxième  nombre ");    
+```
+
+Si l'un des champs est vide, un message d'erreur est affiché dans l'élément `pgcd_res`.
+
+```javascript
+if(x == '' || y ==  ''){
+   pgcd_res.innerText = "Vous n'avez entré aucun nombre."
+}
+```
+
+**2. Calcul du PGCD :**
+
+Les valeurs sont échangées si nécessaire pour s'assurer que `x` est supérieur à `y`.
+
+```javascript
+if(x<y){
+            let temp = x;
+            x=y;
+            y=temp;    
+        }
+```
+
+La fonction récursive `pgcd(x, y)` est utilisée :
+
+Si `x` est divisible par `y`, `y` est retourné.
+
+Sinon, la fonction s'appelle elle-même avec `y` et `x % y` jusqu'à trouver le PGCD.
+
+```javascript
+let pgcd = (x,y) => {
+        
+            if(x%y == 0){
+                return y;
+            }
+        
+            return pgcd(y, x%y);
+        }
+```
+
+**3. Affichage du résultat :**
+
+Le PGCD est affiché dans l'élément `pgcd_res` sous la forme `PGCD(x, y) = résultat`.
+
 ### La somme des chiffres dans un entier donné.
+
+**1. Demande de l'entrée utilisateur :**
+
+L'utilisateur entre un nombre via `prompt()`.
+
+Si le champ est vide, une alerte est affichée et la fonction s'arrête.
+
+```javascript
+let x = prompt("donner le nombre ");
+    if(x == '' ){
+        alert("Enter un nombre !");
+        return;
+    }
+```
+
+**2.Calcul de la somme des chiffres :**
+
+La variable sum est initialisée à `0`.
+
+Le nombre est converti en chaîne de caractères pour parcourir chaque chiffre individuellement.
+
+Une boucle `for` additionne chaque chiffre après l'avoir converti en entier avec `parseInt()`.
+
+```javascript
+ let sum = 0;
+    
+    x = x.toString();
+    
+    for (let index = 0; index < x.length; index++) {
+        sum += parseInt(x[index]);
+    }
+    
+```
+
+**3.Affichage du résultat :**
+
+La somme des chiffres est affichée dans un élément HTML avec l'ID somme sous la forme La somme des chiffres de `x : résultat`.
+
+```javascript
+somme.innerText = "La somme des chiffres de " + x + " : " + sum  ;
+```
+
 ### Convertir un nombre décimal en binaire
+
+**1.Demande de l'entrée utilisateur :**
+
+L'utilisateur entre un nombre via `prompt()`.
+
+Si le champ est vide, une alerte est affichée et la fonction s'arrête.
+
+```javascript
+ let dec = prompt("Le nombre decimal : ");
+
+    if(dec == ''){
+        alert("Enter un nombre !");
+        return;
+    }
+```
+
+**2. Conversion en binaire :**
+
+Une fonction récursive `decToBin(x)` est utilisée pour convertir le nombre en binaire.
+
+L'algorithme utilise la division par 2 et stocke le résultat sous forme de nombre.
+
+```javascript
+
+    let bin = 0;
+
+    let i = 0;
+    
+    let decToBin = (x) =>{
+        
+        bin = bin +  (x%2) * Math.pow(10, i++)
+        
+    
+        if (x == 1 || x == 0){
+            return bin;
+        }
+    
+    
+        return decToBin(Math.floor(x/2));
+    }
+```
+
+**3. Affichage du résultat :**
+
+Le résultat est affiché dans un élément HTML avec l'ID binary.
