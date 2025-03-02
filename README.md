@@ -1,7 +1,7 @@
 # Math-tools
 Ce site web fournit différents outils mathématiques:
 
-[1. Table de multiplication d'un nombre donné.](#Table-de-multiplication-d'un-nombre-donné)
+[1. Table de multiplication d'un nombre donné.](#Table-de-multiplication-dun-nombre-donné)
 
 [2. Le pgcd de deux entiers.](#Le-pgcd-de-deux-entiers)
 
